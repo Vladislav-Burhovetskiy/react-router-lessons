@@ -462,6 +462,8 @@ i[class*="van-type-"] {
 
 .not-found-container {
   padding-inline: 26px;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 .not-found-container .link-button {
