@@ -20,6 +20,7 @@ import HostVanPricing from ".././pages/Host/HostVanPricing";
 import HostVanPhotos from ".././pages/Host/HostVanPhotos";
 import Layout from ".././components/Layout";
 import HostLayout from ".././components/HostLayout";
+import Error from ".././components/Error";
 
 import "../../server/server";
 
@@ -31,7 +32,8 @@ const routing = createBrowserRouter(
       <Route 
         path="vans" 
         element={<Vans />} 
-        loader={vansLoader} 
+        loader={vansLoader}
+        errorElement={<Error />}
       />
       <Route path="vans/:id" element={<VanDetail />} />
 
