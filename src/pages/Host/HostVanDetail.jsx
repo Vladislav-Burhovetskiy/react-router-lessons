@@ -1,20 +1,16 @@
 import React from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useLoaderData } from "react-router-dom";
 import HostVanLayout from "../.././components/HostVanLayout";
+import { getHostVans } from "../../api";
+
+export function loader({ params }) {
+  return getHostVans(params.id);
+}
 
 export default function HostVanDetail() {
-  const { id } = useParams();
-  const [currentVan, setCurrentVan] = React.useState(null);
+  // const { id } = useParams();
+  const currentVan = useLoaderData()
 
-  React.useEffect(() => {
-    fetch(`/api/host/vans/${id}`)
-      .then((res) => res.json())
-      .then((data) => setCurrentVan(data.vans));
-  }, []);
-
-  if (!currentVan) {
-    return <h1>Loading...</h1>;
-  }
   return (
     <section>
       <Link to="../vans" className="back-button">
