@@ -24,7 +24,7 @@ export default function VanDetail() {
       >
         &larr; <span>Back to {type} vans</span>
       </Link>
-      
+
       <div className="van-detail">
         <img src={van.imageUrl} />
         <i className={`van-type ${van.type} selected`}>{van.type}</i>

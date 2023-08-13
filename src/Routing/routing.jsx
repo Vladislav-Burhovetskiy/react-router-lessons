@@ -10,11 +10,15 @@ import About from ".././pages/About";
 import NotFound from ".././pages/NotFound";
 import Login from ".././pages/Login";
 import Vans, { loader as vansLoader } from ".././pages/Vans/Vans";
-import VanDetail, { loader as vansDetailLoader } from ".././pages/Vans/VanDetail";
+import VanDetail, {
+  loader as vansDetailLoader,
+} from ".././pages/Vans/VanDetail";
 import Dashboard from ".././pages/Host/Dashboard";
 import Income from ".././pages/Host/Income";
 import HostVans, { loader as hostVansLoader } from ".././pages/Host/HostVans";
-import HostVanDetail, { loader as hostVansDetailLoader }  from ".././pages/Host/HostVanDetail";
+import HostVanDetail, {
+  loader as hostVansDetailLoader,
+} from ".././pages/Host/HostVanDetail";
 import Reviews from ".././pages/Host/Reviews";
 import HostVanInfo from ".././pages/Host/HostVanInfo";
 import HostVanPricing from ".././pages/Host/HostVanPricing";
@@ -22,6 +26,7 @@ import HostVanPhotos from ".././pages/Host/HostVanPhotos";
 import Layout from ".././components/Layout";
 import HostLayout from ".././components/HostLayout";
 import Error from ".././components/Error";
+import { reqiureAuth } from "../utils/utils";
 
 import "../../server/server";
 
@@ -31,36 +36,60 @@ const routing = createBrowserRouter(
       <Route index element={<Home />} />
       <Route path="about" element={<About />} />
       <Route path="login" element={<Login />} />
-      <Route 
-        path="vans" 
-        element={<Vans />} 
+      <Route
+        path="vans"
+        element={<Vans />}
         loader={vansLoader}
         errorElement={<Error />}
       />
-      <Route 
+      <Route
         path="vans/:id"
         element={<VanDetail />}
         loader={vansDetailLoader}
       />
 
-      <Route path="host" element={<HostLayout />}>
-        <Route index element={<Dashboard />} />
-        <Route path="income" element={<Income />} />
-        <Route path="reviews" element={<Reviews />} />
-        <Route 
-          path="vans"
-          element={<HostVans />}
-          loader={hostVansLoader}
+      <Route
+        path="host"
+        element={<HostLayout />}
+        loader={async () => await reqiureAuth()}
+      >
+        <Route
+          index
+          element={<Dashboard />}
+          loader={async () => await reqiureAuth()}
         />
+        <Route
+          path="income"
+          element={<Income />}
+          loader={async () => await reqiureAuth()}
+        />
+        <Route
+          path="reviews"
+          element={<Reviews />}
+          loader={async () => await reqiureAuth()}
+        />
+        <Route path="vans" element={<HostVans />} loader={hostVansLoader} />
 
-        <Route 
-          path="vans/:id" 
+        <Route
+          path="vans/:id"
           element={<HostVanDetail />}
           loader={hostVansDetailLoader}
         >
-          <Route index element={<HostVanInfo />} />
-          <Route path="pricing" element={<HostVanPricing />} />
-          <Route path="photos" element={<HostVanPhotos />} />
+          <Route
+            index
+            element={<HostVanInfo />}
+            loader={async () => await reqiureAuth()}
+          />
+          <Route
+            path="pricing"
+            element={<HostVanPricing />}
+            loader={async () => await reqiureAuth()}
+          />
+          <Route
+            path="photos"
+            element={<HostVanPhotos />}
+            loader={async () => await reqiureAuth()}
+          />
         </Route>
       </Route>
       <Route path="*" element={<NotFound />} />
