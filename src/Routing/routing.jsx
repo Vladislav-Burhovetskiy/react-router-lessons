@@ -8,7 +8,7 @@ import {
 import Home from ".././pages/Home";
 import About from ".././pages/About";
 import NotFound from ".././pages/NotFound";
-import Login from ".././pages/Login";
+import Login, { loader as loginLoader } from ".././pages/Login";
 import Vans, { loader as vansLoader } from ".././pages/Vans/Vans";
 import VanDetail, {
   loader as vansDetailLoader,
@@ -35,7 +35,11 @@ const routing = createBrowserRouter(
     <Route path="/" element={<Layout />}>
       <Route index element={<Home />} />
       <Route path="about" element={<About />} />
-      <Route path="login" element={<Login />} />
+      <Route 
+        path="login" 
+        element={<Login />} 
+        loader={loginLoader} 
+      />
       <Route
         path="vans"
         element={<Vans />}
