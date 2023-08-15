@@ -6,15 +6,20 @@ export function loader({ request }) {
   return new URL(request.url).searchParams.get("message");
 }
 
+export async function action({ request }) {
+  const formData = await request.formData()
+  const email = formData.get("email")
+  const password = formData.get("password")
+  const data = await loginUser({ email, password })
+  localStorage.setItem("loggedin", true)
+
+  return null
+}
+
 export default function Login() {
-  const [loginFormData, setLoginFormData] = React.useState({
-    email: "",
-    password: "",
-  });
   const [status, setStatus] = React.useState("idle");
   const [error, setError] = React.useState(null);
   const message = useLoaderData();
-  console.log(message);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -26,14 +31,6 @@ export default function Login() {
       .finally(() => setStatus("idle"));
   }
 
-  function handleChange(e) {
-    const { name, value } = e.target;
-    setLoginFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  }
-
   return (
     <div className="login-container">
       <h1>Sign in to your account</h1>
@@ -42,17 +39,13 @@ export default function Login() {
       <form onSubmit={handleSubmit} className="login-form">
         <input
           name="email"
-          onChange={handleChange}
           type="email"
           placeholder="Email address"
-          value={loginFormData.email}
         />
         <input
           name="password"
-          onChange={handleChange}
           type="password"
           placeholder="Password"
-          value={loginFormData.password}
         />
         <button disabled={status === "submitting"}>
           {status === "submitting" ? "Logging in..." : "Log in"}
