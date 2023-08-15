@@ -8,6 +8,7 @@ export async function getHostVans(id) {
   return fetchData(url);
 }
 
+
 async function fetchData(url) {
   const res = await fetch(url)
   if (!res.ok) {

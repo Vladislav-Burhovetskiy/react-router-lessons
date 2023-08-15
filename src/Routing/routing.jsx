@@ -30,7 +30,7 @@ import Layout from ".././components/Layout";
 import HostLayout from ".././components/HostLayout";
 import Error from ".././components/Error";
 import { reqiureAuth } from "../utils/utils";
-
+// localStorage.removeItem("loggedin");
 import "../../server/server";
 
 const routing = createBrowserRouter(
