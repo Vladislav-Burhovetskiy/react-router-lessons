@@ -30,7 +30,7 @@ import Layout from ".././components/Layout";
 import HostLayout from ".././components/HostLayout";
 import Error from ".././components/Error";
 import { reqiureAuth } from "../utils/utils";
-// localStorage.removeItem("loggedin");
+
 import "../../server/server";
 
 const routing = createBrowserRouter(
@@ -59,22 +59,22 @@ const routing = createBrowserRouter(
       <Route
         path="host"
         element={<HostLayout />}
-        loader={async () => await reqiureAuth()}
+        loader={async ({ request }) => await reqiureAuth(request)}
       >
         <Route
           index
           element={<Dashboard />}
-          loader={async () => await reqiureAuth()}
+          loader={async ({ request }) => await reqiureAuth(request)}
         />
         <Route
           path="income"
           element={<Income />}
-          loader={async () => await reqiureAuth()}
+          loader={async ({ request }) => await reqiureAuth(request)}
         />
         <Route
           path="reviews"
           element={<Reviews />}
-          loader={async () => await reqiureAuth()}
+          loader={async ({ request }) => await reqiureAuth(request)}
         />
         <Route path="vans" element={<HostVans />} loader={hostVansLoader} />
 
@@ -86,17 +86,17 @@ const routing = createBrowserRouter(
           <Route
             index
             element={<HostVanInfo />}
-            loader={async () => await reqiureAuth()}
+            loader={async ({ request }) => await reqiureAuth(request)}
           />
           <Route
             path="pricing"
             element={<HostVanPricing />}
-            loader={async () => await reqiureAuth()}
+            loader={async ({ request }) => await reqiureAuth(request)}
           />
           <Route
             path="photos"
             element={<HostVanPhotos />}
-            loader={async () => await reqiureAuth()}
+            loader={async ({ request }) => await reqiureAuth(request)}
           />
         </Route>
       </Route>

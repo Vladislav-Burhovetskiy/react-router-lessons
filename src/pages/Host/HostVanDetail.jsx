@@ -4,8 +4,8 @@ import HostVanLayout from "../.././components/HostVanLayout";
 import { getHostVans } from "../../api";
 import { reqiureAuth } from "../../utils/utils";
 
-export async function loader({ params }) {
-  await reqiureAuth();
+export async function loader({ params, request }) {
+  await reqiureAuth(request);
   return getHostVans(params.id);
 }
 
