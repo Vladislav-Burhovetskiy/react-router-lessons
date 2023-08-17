@@ -43,6 +43,10 @@ export default function Login() {
         <button disabled={navigation.state === "submitting"}>
           {navigation.state === "submitting" ? "Logging in..." : "Log in"}
         </button>
+        <div className="login-form-data-login">
+          <p>Email: b@b.com</p>
+          <p>Password: p123</p>
+        </div>
       </Form>
     </div>
   );

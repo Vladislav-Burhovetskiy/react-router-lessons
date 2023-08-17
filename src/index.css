@@ -544,3 +544,12 @@ i[class*="van-type-"] {
 .red {
   color: #cc0000;
 }
+
+.login-form-data-login {
+  display: flex;
+  justify-content: center;
+}
+
+.login-form-data-login p {
+  margin-right: 30px;
+}
