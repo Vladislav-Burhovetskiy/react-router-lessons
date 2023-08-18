@@ -340,6 +340,27 @@ i[class*="van-type-"] {
   font-size: 1.125rem;
 }
 
+@media (min-width: 745px) {
+  .van-detail {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .van-detail img {
+    width: 100%;
+  }
+
+  .van-detail-image-container {
+    margin-right: 30px;
+    max-width: 450px;
+  }
+
+  .van-detail-info-container {
+    margin-top: 53px;
+  }
+}
+
 .host-nav {
   display: flex;
 }
