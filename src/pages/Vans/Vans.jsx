@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 
 import { getVans } from "../../api";
+import SpinnerLoading from "../../utils/Spinner";
 
 export function loader() {
   return defer({ vans: getVans() });
@@ -108,7 +109,7 @@ export default function Vans() {
   return (
     <div className="van-list-container">
       <h1>Explore our van options</h1>
-      <React.Suspense fallback={<h3>Loading vans...</h3>}>
+      <React.Suspense fallback={<SpinnerLoading />}>
         <Await resolve={dataPromise.vans}>{renderVanElements}</Await>
       </React.Suspense>
     </div>

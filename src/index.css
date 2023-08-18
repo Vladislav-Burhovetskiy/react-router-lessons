@@ -553,3 +553,9 @@ i[class*="van-type-"] {
 .login-form-data-login p {
   margin-right: 30px;
 }
+
+.spinner-loading {
+  display: flex;
+  justify-content: center;
+  margin-top: 150px;
+}

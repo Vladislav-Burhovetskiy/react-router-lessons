@@ -1,15 +1,16 @@
 {
   "name": "react-router-lessons",
   "dependencies": {
+    "miragejs": "0.1.46",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-router-dom": "6.4.3",
-    "miragejs": "0.1.46"
+    "react-spinners": "^0.13.8"
   },
   "devDependencies": {
-    "vite": "latest",
     "@vitejs/plugin-react": "*",
-    "eslint-plugin-react": "^7.33.1"
+    "eslint-plugin-react": "^7.33.1",
+    "vite": "latest"
   },
   "scripts": {
     "start": "vite",
