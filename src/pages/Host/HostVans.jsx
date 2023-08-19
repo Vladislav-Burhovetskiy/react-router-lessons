@@ -1,11 +1,11 @@
 import React, { Suspense } from "react";
 import { Await, Link, useLoaderData, defer } from "react-router-dom";
 import { getHostVans } from "../../api";
-import { reqiureAuth } from "../../utils/utils";
+import { requireAuth } from "../../utils/utils";
 import SpinnerLoading from "../../utils/Spinner";
 
 export async function loader({ request }) {
-  await reqiureAuth(request);
+  await requireAuth(request);
   return defer({vans: getHostVans()});
 }
 
