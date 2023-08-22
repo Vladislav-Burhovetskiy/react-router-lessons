@@ -23,7 +23,7 @@ export default function Dashboard() {
             <p>${van.price}/day</p>
           </div>
         </div>
-        <Link to={`vans/${van.id}`}>View</Link>
+        <Link to={`/react-router-lessons/vans/${van.id}`}>View</Link>
       </div>
     ));
 
