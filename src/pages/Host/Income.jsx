@@ -16,7 +16,7 @@ export default function Income() {
       <h2>$2,260</h2>
       <img
         className="graph"
-        src="/assets/images/income-graph.png"
+        src="/public/images/income-graph.png"
         alt="Income graph"
         onLoad={() => setImageLoaded(true)}
       />
