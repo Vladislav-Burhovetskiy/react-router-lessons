@@ -33,7 +33,7 @@ export default function About() {
               <br />
               Your van is ready.
             </h2>
-            <Link className="link-button" to="/react-router-lessons/vans">
+            <Link className="link-button" to="/vanlifewebs/vans">
               Explore our vans
             </Link>
           </div>

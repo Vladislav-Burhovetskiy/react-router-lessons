@@ -1,10 +1,10 @@
 export async function getVans(id) {
-  const url = id ? `/api/react-router-lessons/vans/${id}` : "/api/react-router-lessons/vans"
+  const url = id ? `/api/vanlifewebs/vans/${id}` : "/api/vanlifewebs/vans"
   return fetchData(url);
 }
 
 export async function getHostVans(id) {
-  const url = id ? `/api/react-router-lessons/host/vans/${id}` : "/api/react-router-lessons/host/vans"
+  const url = id ? `/api/vanlifewebs/host/vans/${id}` : "/api/vanlifewebs/host/vans"
   return fetchData(url);
 }
 
@@ -23,7 +23,7 @@ async function fetchData(url) {
 }
 
 export async function loginUser(creds) {
-  const res = await fetch("/api/react-router-lessons/login",
+  const res = await fetch("/api/vanlifewebs/login",
       { method: "post", body: JSON.stringify(creds) }
   )
   const data = await res.json()

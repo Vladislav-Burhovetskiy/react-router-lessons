@@ -11,24 +11,24 @@ export default function Header() {
 
   return (
     <header>
-      <Link className="site-logo" to="/react-router-lessons">
+      <Link className="site-logo" to="/vanlifewebs">
         #VanLife
       </Link>
       <nav>
         <NavLink
-          to="/react-router-lessons/host"
+          to="/vanlifewebs/host"
           style={({ isActive }) => (isActive ? activeStyles : null)}
         >
           Host
         </NavLink>
         <NavLink
-          to="/react-router-lessons/about"
+          to="/vanlifewebs/about"
           style={({ isActive }) => (isActive ? activeStyles : null)}
         >
           About
         </NavLink>
         <NavLink
-          to="/react-router-lessons/vans"
+          to="/vanlifewebs/vans"
           style={({ isActive }) => (isActive ? activeStyles : null)}
         >
           Vans
@@ -36,7 +36,7 @@ export default function Header() {
         <div>
 
         </div>
-        <Link to="/react-router-lessons/login" className="login-link">
+        <Link to="/vanlifewebs/login" className="login-link">
           <img src={imageUrl} className="login-icon" />
         </Link>
         <button
