@@ -1,10 +1,10 @@
 export async function getVans(id) {
-  const url = id ? `/api/vans/${id}` : "/api/vans"
+  const url = id ? `/api/react-router-lessons/vans/${id}` : "/api/react-router-lessons/vans"
   return fetchData(url);
 }
 
 export async function getHostVans(id) {
-  const url = id ? `/api/host/vans/${id}` : "/api/host/vans"
+  const url = id ? `/api/react-router-lessons/host/vans/${id}` : "/api/react-router-lessons/host/vans"
   return fetchData(url);
 }
 
@@ -23,7 +23,7 @@ async function fetchData(url) {
 }
 
 export async function loginUser(creds) {
-  const res = await fetch("/api/login",
+  const res = await fetch("/api/react-router-lessons/login",
       { method: "post", body: JSON.stringify(creds) }
   )
   const data = await res.json()
