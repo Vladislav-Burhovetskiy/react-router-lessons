@@ -23,7 +23,7 @@ export default function Dashboard() {
             <p>${van.price}/day</p>
           </div>
         </div>
-        <Link to={`/vanlifewebs/vans/${van.id}`}>View</Link>
+        <Link to={`/vanlifeweb/vans/${van.id}`}>View</Link>
       </div>
     ));
 

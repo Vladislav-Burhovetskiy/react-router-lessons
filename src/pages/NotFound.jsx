@@ -5,7 +5,7 @@ export default function NotFound() {
     return (
         <div className="not-found-container">
             <h1>Sorry, the page you were looking for was not found.</h1>
-            <Link to="/vanlifewebs" className="link-button">Return to Home</Link>
+            <Link to="/vanlifeweb" className="link-button">Return to Home</Link>
         </div>
     )
 }

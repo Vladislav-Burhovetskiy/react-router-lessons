@@ -40,7 +40,7 @@ export default function Vans() {
       <div key={van.id} className="van-tile">
         {/* to={van.id} */}
         <Link
-          to={`/vanlifewebs/vans/${van.id}`}
+          to={`/vanlifeweb/vans/${van.id}`}
           state={{
             search: searchParams.toString(),
             type: typeFilter,

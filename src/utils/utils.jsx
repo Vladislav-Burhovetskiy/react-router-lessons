@@ -6,7 +6,7 @@ export async function requireAuth(request) {
 
   if (!isLoggedIn) {
     throw redirect(
-      `/vanlifewebs/login?message=You must log in first.&redirectTo=${pathname}`
+      `/vanlifeweb/login?message=You must log in first.&redirectTo=${pathname}`
     );
   }
 }

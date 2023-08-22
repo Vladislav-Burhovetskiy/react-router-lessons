@@ -22,28 +22,28 @@ createServer({
         this.logging = false
         this.timing = 1500
 
-        this.get("/vanlifewebs/vans", (schema, request) => {
+        this.get("/vanlifeweb/vans", (schema, request) => {
             // return new Response(400, {}, {error: "Error fetching data"})
             return schema.vans.all()
         })
 
-        this.get("/vanlifewebs/vans/:id", (schema, request) => {
+        this.get("/vanlifeweb/vans/:id", (schema, request) => {
             const id = request.params.id
             return schema.vans.find(id)
         })
 
-        this.get("/vanlifewebs/host/vans", (schema, request) => {
+        this.get("/vanlifeweb/host/vans", (schema, request) => {
             // Hard-code the hostId for now
             return schema.vans.where({ hostId: "123" })
         })
 
-        this.get("/vanlifewebs/host/vans/:id", (schema, request) => {
+        this.get("/vanlifeweb/host/vans/:id", (schema, request) => {
             // Hard-code the hostId for now
             const id = request.params.id
             return schema.vans.findBy({ id, hostId: "123" })
         })
 
-        this.post("/vanlifewebs/login", (schema, request) => {
+        this.post("/vanlifeweb/login", (schema, request) => {
             const { email, password } = JSON.parse(request.requestBody)
             // This is an extremely naive version of authentication. Please don't
             // do this in the real world, and never save raw text passwords
