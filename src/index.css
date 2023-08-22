@@ -723,6 +723,7 @@ img.graph {
 }
 
 .host-reviews {
+  margin: 0;
   padding-inline: 26px;
   color: #161616;
 }
@@ -730,7 +731,6 @@ img.graph {
 .host-reviews .top-text {
   display: flex;
   align-items: center;
-  margin-bottom: 32px;
 }
 
 .host-reviews .top-text > h2 {
