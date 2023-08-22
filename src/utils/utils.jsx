@@ -6,7 +6,7 @@ export async function requireAuth(request) {
 
   if (!isLoggedIn) {
     throw redirect(
-      `/login?message=You must log in first.&redirectTo=${pathname}`
+      `/react-router-lessons/login?message=You must log in first.&redirectTo=${pathname}`
     );
   }
 }
