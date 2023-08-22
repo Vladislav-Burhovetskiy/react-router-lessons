@@ -12,26 +12,26 @@ export default function HostLayout() {
     <>
       <nav className="host-nav">
         <NavLink
-          to="/host"
+          to="/react-router-lessons/host"
           end
           style={({ isActive }) => (isActive ? styleIsActive : null)}
         >
           Dashboard
         </NavLink>
         <NavLink
-          to="/host/income"
+          to="/react-router-lessons/host/income"
           style={({ isActive }) => (isActive ? styleIsActive : null)}
         >
           Income
         </NavLink>
         <NavLink
-          to="/host/vans"
+          to="/react-router-lessons/host/vans"
           style={({ isActive }) => (isActive ? styleIsActive : null)}
         >
           Vans
         </NavLink>
         <NavLink
-          to="/host/reviews"
+          to="/react-router-lessons/host/reviews"
           style={({ isActive }) => (isActive ? styleIsActive : null)}
         >
           Reviews
